@@ -45,7 +45,7 @@ class App extends Component {
     // We accumulate the state and move forward
     var id = this.state.questionId;
     var stat = this.state.answerStat;
-    if (id < this.state.numQuestions && id >= 0) {
+    if (id < (this.state.numQuestions - 1) && id >= 0) {
       // Collect stat and advance
       stat[i] += 1;
 
