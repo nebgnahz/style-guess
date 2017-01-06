@@ -13,9 +13,14 @@ function Question(props) {
 
   return (
     <div>
-      <img src={imagePath(props.image)} alt={props.image}/>
-      <button type="button" onClick={clickLike}>Like</button>
-      <button type="button" onClick={clickNay}>Nay</button>
+      <div className="row">
+        <img className="u-max-full-width"
+             src={imagePath(props.image)} alt={props.image}/>
+      </div>
+      <div className="row">
+        <button type="button" onClick={clickLike}>Like</button>
+        <button type="button" onClick={clickNay}>Nay</button>
+      </div>
     </div>
   );
 }
