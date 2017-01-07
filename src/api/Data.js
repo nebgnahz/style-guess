@@ -6,16 +6,20 @@ const Data = {
 
     questions: [
         {
-            image: "butter1.jpg"
+            image: "butter1.jpg",
+            answer: 0
         },
         {
-            image: "butter2.jpg"
+            image: "sesame1.jpg",
+            answer: 1
         },
         {
-            image: "sesame1.jpg"
+            image: "butter2.jpg",
+            answer: 0
         },
         {
-            image: "sesame2.jpg"
+            image: "sesame2.jpg",
+            answer: 1
         }
 
     ]

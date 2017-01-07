@@ -6,6 +6,8 @@ import Question from './components/Question';
 import Result from './components/Result';
 import Data from './api/Data';
 
+const imagePath = (name) => "./images/" + name;
+
 class App extends Component {
   constructor(props) {
     super(props);
@@ -46,8 +48,11 @@ class App extends Component {
     var id = this.state.questionId;
     var stat = this.state.answerStat;
     if (id < (this.state.numQuestions - 1) && id >= 0) {
-      // Collect stat and advance
-      stat[i] += 1;
+      // Only when the user clicks `like` (1), we add the score.
+      if (i === 1) {
+        var answer = this.state.data.questions[id].answer;
+        stat[answer] += 1;
+      }
 
       this.setState({
         questionId: id + 1,
@@ -81,14 +86,18 @@ class App extends Component {
   }
 
   renderLanding() {
+    var question = this.state.data.questions[0];
     return (
-      <Landing buttonClicked={this.showInstruction.bind(this)}/>
+      <Landing buttonClicked={this.showInstruction.bind(this)}
+               background={imagePath(question.image)} />
     )
   }
 
   renderInstruction() {
+    var question = this.state.data.questions[0];
     return (
-      <Instruction clicked={this.showQuestion.bind(this)}/>
+      <Instruction clicked={this.showQuestion.bind(this)}
+                   background={imagePath(question.image)} />
     )
   }
 
@@ -102,8 +111,10 @@ class App extends Component {
     var index = this.state.questionId;
     var question = this.state.data.questions[index];
     return (
-        <Question image={question.image}
-                  answered={this.userClickedAnswer.bind(this)}/>
+      <Question image={imagePath(question.image)}
+                answered={this.userClickedAnswer.bind(this)}
+                current={index}
+                total={this.state.numQuestions}/>
     );
   }
 

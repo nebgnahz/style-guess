@@ -1,6 +1,11 @@
+html {
+    height: 100%;
+}
+
 body {
-    font-size: 2em;
+    font-size: 1.4em;
     line-height: 1.3;
+    height: 100%;
 }
 
 .container {
@@ -9,5 +14,49 @@ body {
 }
 
 .fancy-text {
+    font-size: 2em;
     font-family: 'Dancing Script', cursive;
+}
+
+.landing {
+    display: flex;
+    height: 200px;
+}
+
+.block-over {
+    background: rgba(255, 255, 255, .7);
+    align-items: stretch;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    z-index: 5;
+    text-align: center;
+}
+
+div.text-frame {
+    position: absolute;
+    top: 10%;
+    height: 80%;
+    left: 10%;
+    width: 80%;
+}
+
+.hide {
+    visibility: hidden;
+}
+
+@media (min-width: 500px) {
+    body {
+        font-size: 2.3em;
+    }
+
+    .fancy-text {
+        font-size: 3em;
+    }
+
+    .landing {
+        height: 600px;
+    }
 }
