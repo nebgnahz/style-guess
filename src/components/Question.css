@@ -66,3 +66,22 @@ div.right-side span i {
         width: 120px;
     }
 }
+
+/* Progress bar */
+#progressbar {
+    width: 94%;
+    height: 5px;
+    margin: .6em 0;
+    border: 1.5px #f75c74 solid;
+    margin-top: 3rem;
+    margin-left: 3%;
+    clear: both;
+}
+
+#progress {
+    background: #f75c74;
+    height: 5px;
+    max-width: 100%;
+    float: left;
+    width: 10%;
+}

@@ -16,8 +16,9 @@ function Question(props) {
     'background-size': '100%'
   };
 
-  var hideStyle = {
-    visibility: "hidden"
+  var progress = 100.0 * (props.current + 1) / props.total + "%";
+  var progressStyle = {
+    width: progress
   }
 
   return (
@@ -26,7 +27,7 @@ function Question(props) {
         <p className="fancy-text">What's your style?</p>
       </div>
       <div className="row question" style={divStyle}>
-        <img src={props.image} style={hideStyle} role="presentation" />
+        <img src={props.image} className="hide" role="presentation" />
         <div className="left-side" onClick={clickNay}>
           <span>
             <i className="fa fa-lg fa-ban" aria-hidden="true"></i>
@@ -43,8 +44,15 @@ function Question(props) {
         </div>
       </div>
       <div className="row">
+        <div id="progressbar">
+          <div id="progress" style={progressStyle}>
+            <div id="pbaranim">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="row">
         <span>{props.current + 1} / {props.total}</span>
-        <span>TODO: add progress bar</span>
       </div>
     </div>
   );
