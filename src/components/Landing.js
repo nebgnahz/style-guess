@@ -17,7 +17,6 @@ function Landing(props) {
         <p className="fancy-text">What's your style?</p>
       </div>
       <div className="row landing" style={divStyle}>
-        <img src={props.background} className="hide" role="presentation" />
         <div className="block-over" onClick={handleStart}>
           <div className="text-frame">
             <a>START</a>

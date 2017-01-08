@@ -27,18 +27,17 @@ function Question(props) {
         <p className="fancy-text">What's your style?</p>
       </div>
       <div className="row question" style={divStyle}>
-        <img src={props.image} className="hide" role="presentation" />
         <div className="left-side" onClick={clickNay}>
           <span>
             <i className="fa fa-lg fa-ban" aria-hidden="true"></i>
-            <br/><br/>
+            <div className="space"/>
             not for me
           </span>
         </div>
         <div className="right-side" onClick={clickLike}>
           <span>
             <i className="fa fa-lg fa-heart" aria-hidden="true"></i>
-            <br/><br/>
+            <div className="space"/>
             like
           </span>
         </div>

@@ -17,10 +17,9 @@ function Instruction(props) {
         <p className="fancy-text">What's your style?</p>
       </div>
       <div className="row landing" style={divStyle}>
-        <img src={props.background} className="hide" role="presentation" />
         <div className="block-over" onClick={handleStart}>
           <div className="text-frame">
-            <h2>How It Works</h2>
+            <p>How It Works</p>
             <p>Click on the <i className="fa fa-heart" aria-hidden="true" />
               &nbsp; if you ‘LIKE’ the image! </p>
             <p>Click on the <i className="fa fa-ban" aria-hidden="true" />
