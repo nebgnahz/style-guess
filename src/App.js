@@ -64,9 +64,6 @@ class App extends Component {
         questionId: id + 1,
         answerStat: stat,
       });
-
-      // After set the state, we store the state
-      localStorage.setItem('state', JSON.stringify(this.state));
     } else {
       // Finished so show result page?
       console.log(this.state.answerStat);
@@ -133,8 +130,10 @@ class App extends Component {
     if (this.state.landingPage) {
       page = this.renderLanding();
     } else if (this.state.instructionPage) {
+      localStorage.setItem('state', JSON.stringify(this.state));
       page = this.renderInstruction();
     } else if (this.state.questionPage) {
+      localStorage.setItem('state', JSON.stringify(this.state));
       page = this.renderQuestion();
     } else if (this.state.resultPage) {
       page = this.renderResult();

@@ -26,11 +26,11 @@ const Data = {
             answer: 1
         },
         {
-            image: "butter2.jpg",
+            image: "butter3.jpg",
             answer: 0
         },
         {
-            image: "sesame2.jpg",
+            image: "sesame3.jpg",
             answer: 1
         }
     ]
