@@ -12,7 +12,7 @@ class App extends Component {
   constructor(props) {
     super(props);
 
-    this.state = {
+    var state = {
       // state machine
       landingPage: true,
       instructionPage: false,
@@ -27,6 +27,12 @@ class App extends Component {
       numQuestions: '',
       answerStat: '',
     }
+
+    var stored = localStorage.getItem('state');
+    if (stored !== null) {
+      state = JSON.parse(stored);
+    }
+    this.state = state;
   }
 
   getResult() {
@@ -58,6 +64,9 @@ class App extends Component {
         questionId: id + 1,
         answerStat: stat,
       });
+
+      // After set the state, we store the state
+      localStorage.setItem('state', JSON.stringify(this.state));
     } else {
       // Finished so show result page?
       console.log(this.state.answerStat);
@@ -102,6 +111,7 @@ class App extends Component {
   }
 
   renderResult() {
+    localStorage.clear();
     return (
       <Result result={this.getResult()} />
     );
