@@ -12,8 +12,8 @@ function Question(props) {
 
   var divStyle = {
     'backgroundImage': "url(" + props.image + ")",
-    'background-repeat': "no-repeat",
-    'background-size': '100%'
+    'backgroundRepeat': "no-repeat",
+    'backgroundSize': '100%'
   };
 
   var progress = 100.0 * (props.current + 1) / props.total + "%";

@@ -47,6 +47,12 @@ class App extends Component {
       numQuestions: Data.questions.length,
       answerStat: Array.from({ length: Data.answers.length }, () => 0),
     });
+
+    // Prefetch caching
+    var image = new Image();
+    for (let q of Data.questions) {
+      image.url = q.image;
+    }
   }
 
   userClickedAnswer(i) {

@@ -7,8 +7,8 @@ function Landing(props) {
 
   var divStyle = {
     'backgroundImage': "url(" + props.background + ")",
-    'background-repeat': "no-repeat",
-    'background-size': '100%'
+    'backgroundRepeat': "no-repeat",
+    'backgroundSize': '100%'
   };
 
   return (
