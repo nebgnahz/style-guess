@@ -57,7 +57,11 @@ class App extends Component {
       // Only when the user clicks `like` (1), we add the score.
       if (i === 1) {
         var answer = this.state.data.questions[id].answer;
-        stat[answer] += 1;
+        for (var a in answer) {
+          if (answer.hasOwnProperty(a)) {
+            stat[a] += 1;
+          }
+        }
       }
 
       this.setState({

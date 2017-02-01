@@ -3,7 +3,7 @@ import React from 'react';
 function Result(props) {
   return (
     <div className="row">
-      <p>You like {props.result}!</p>
+      <p>Your style is "{props.result}"</p>
     </div>
   );
 }
