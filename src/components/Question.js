@@ -3,11 +3,11 @@ import './Question.css';
 
 function Question(props) {
   const clickLike = (e) => {
-    props.answered(0)
+    props.answered(1)
   };
 
   const clickNay = (e) => {
-    props.answered(1)
+    props.answered(0)
   };
 
   var divStyle = {
