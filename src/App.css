@@ -5,6 +5,7 @@ html {
 
 a {
     color: #f75c74;
+    cursor: pointer;
 }
 
 body {
