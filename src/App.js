@@ -7,6 +7,7 @@ import Result from './components/Result';
 import Data from './api/Data';
 
 const imagePath = (name) => "./images/" + name;
+const answerImagePath = (name) => imagePath("result-" + name.toLowerCase() + ".png");
 
 class App extends Component {
   constructor(props) {
@@ -44,11 +45,13 @@ class App extends Component {
 
   componentWillMount() {
     // The time when we get the data
+    var questionImages = Data.questions.map((e) => imagePath(e.image));
+    var answerImages = Data.answers.map((e) => answerImagePath(e));
     this.setState({
       data: Data,
       numQuestions: Data.questions.length,
       answerStat: Array.from({ length: Data.answers.length }, () => 0),
-      preloadImages: Data.questions.map((e) => imagePath(e.image))
+      preloadImages: questionImages.concat(answerImages),
     });
   }
 
@@ -127,11 +130,11 @@ class App extends Component {
   }
 
   renderResult() {
-    var r_text = this.getResult();
-    var r_image = imagePath("result-" + r_text.toLowerCase() + ".png");
+    var answerText = this.getResult();
+    var answerImage = answerImagePath(answerText);
     return (
-      <Result result={r_text}
-              image={r_image}
+      <Result result={answerText}
+              image={answerImage}
               reset={this.resetTest.bind(this)}
       />
     );
