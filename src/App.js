@@ -169,7 +169,7 @@ class App extends Component {
     }
 
     var Preload = require('react-preload').Preload;
-    var loadingIndicator = (<div>Loading...</div>)
+    var loadingIndicator = (<div></div>)
     var images = this.state.preloadImages;
     return (
       <div className="container">
@@ -183,8 +183,7 @@ class App extends Component {
             onSuccess={(s) => console.log(s)}
             resolveOnError={true}
             mountChildren={true}
-        ><div></div>
-        </Preload>
+        />
       </div>
     )
   }
