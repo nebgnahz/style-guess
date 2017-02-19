@@ -1,5 +1,6 @@
 import React from 'react';
 import './Question.css';
+import Hammer from 'react-hammerjs';
 
 function Question(props) {
   const clickLike = (e) => {
@@ -8,6 +9,10 @@ function Question(props) {
 
   const clickNay = (e) => {
     props.answered(0)
+  };
+
+  const handleSwipe = (e) => {
+    console.log(e)
   };
 
   var divStyle = {
@@ -53,6 +58,10 @@ function Question(props) {
       <div className="row">
         <span>{props.current + 1} / {props.total}</span>
       </div>
+
+      <Hammer onSwipe={handleSwipe}>
+        <div>text</div>
+      </Hammer>
       <div className="row">
         <button onClick={props.reset}>reset the test</button>
       </div>

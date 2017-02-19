@@ -179,11 +179,9 @@ class App extends Component {
             loadingIndicator={loadingIndicator}
             images={images}
             autoResolveDelay={3000}
-            onError={(e) => console.log(e)}
-            onSuccess={(s) => console.log(s)}
             resolveOnError={true}
             mountChildren={true}
-        />
+        ><div></div></Preload>
       </div>
     )
   }
