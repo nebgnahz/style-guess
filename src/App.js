@@ -111,8 +111,11 @@ class App extends Component {
 
   renderResult() {
     localStorage.clear();
+    var r_text = this.getResult();
+    var r_image = imagePath("result-" + r_text.toLowerCase() + ".png");
     return (
-      <Result result={this.getResult()} />
+      <Result result={r_text}
+              image={r_image} />
     );
   }
 
