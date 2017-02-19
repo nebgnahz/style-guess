@@ -81,3 +81,7 @@ div.text-frame {
         height: 600px;
     }
 }
+
+div#result .row {
+    padding-top: 2rem;
+}

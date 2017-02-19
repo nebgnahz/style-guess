@@ -53,6 +53,9 @@ function Question(props) {
       <div className="row">
         <span>{props.current + 1} / {props.total}</span>
       </div>
+      <div className="row">
+        <button onClick={props.reset}>reset the test</button>
+      </div>
     </div>
   );
 }
@@ -62,6 +65,7 @@ Question.propTypes = {
   answered: React.PropTypes.func.isRequired,
   current: React.PropTypes.number.isRequired,
   total: React.PropTypes.number.isRequired,
+  reset: React.PropTypes.func,
 };
 
 export default Question;

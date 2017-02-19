@@ -26,6 +26,7 @@ class App extends Component {
       data: '',
       numQuestions: '',
       answerStat: '',
+      preloadImages: [],
     }
 
     var stored = localStorage.getItem('state');
@@ -42,10 +43,12 @@ class App extends Component {
   }
 
   componentWillMount() {
+    // The time when we get the data
     this.setState({
       data: Data,
       numQuestions: Data.questions.length,
       answerStat: Array.from({ length: Data.answers.length }, () => 0),
+      preloadImages: Data.questions.map((e) => imagePath(e.image))
     });
   }
 
@@ -95,6 +98,7 @@ class App extends Component {
 
   renderLanding() {
     var question = this.state.data.questions[0];
+
     return (
       <Landing buttonClicked={this.showInstruction.bind(this)}
                background={imagePath(question.image)} />
@@ -109,13 +113,27 @@ class App extends Component {
     )
   }
 
-  renderResult() {
+  resetTest() {
     localStorage.clear();
+    var answerCleared = this.state.answerStat.map((ans) => ans = 0);
+    this.setState({
+      landingPage: true,
+      instructionPage: false,
+      questionPage: false,
+      resultPage: false,
+      questionId: 0,
+      answerStat: answerCleared,
+    })
+  }
+
+  renderResult() {
     var r_text = this.getResult();
     var r_image = imagePath("result-" + r_text.toLowerCase() + ".png");
     return (
       <Result result={r_text}
-              image={r_image} />
+              image={r_image}
+              reset={this.resetTest.bind(this)}
+      />
     );
   }
 
@@ -126,7 +144,9 @@ class App extends Component {
       <Question image={imagePath(question.image)}
                 answered={this.userClickedAnswer.bind(this)}
                 current={index}
-                total={this.state.numQuestions}/>
+                total={this.state.numQuestions}
+                reset={this.resetTest.bind(this)}
+      />
     );
   }
 
@@ -141,12 +161,27 @@ class App extends Component {
       localStorage.setItem('state', JSON.stringify(this.state));
       page = this.renderQuestion();
     } else if (this.state.resultPage) {
+      localStorage.setItem('state', JSON.stringify(this.state));
       page = this.renderResult();
     }
 
+    var Preload = require('react-preload').Preload;
+    var loadingIndicator = (<div>Loading...</div>)
+    var images = this.state.preloadImages;
     return (
       <div className="container">
-        {page}
+        { page }
+
+        <Preload
+            loadingIndicator={loadingIndicator}
+            images={images}
+            autoResolveDelay={3000}
+            onError={(e) => console.log(e)}
+            onSuccess={(s) => console.log(s)}
+            resolveOnError={true}
+            mountChildren={true}
+        ><div></div>
+        </Preload>
       </div>
     )
   }

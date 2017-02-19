@@ -1,11 +1,11 @@
 const Data = {
     answers: [
-        "Chic",
-        "Rustic",
-        "Classic",
-        "Fairytale",
-        "Glamous",
-        "Garden"
+        "chic",
+        "rustic",
+        "classic",
+        "fairytale",
+        "glamous",
+        "garden"
     ],
 
     questions: [
