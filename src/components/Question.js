@@ -11,7 +11,7 @@ function Question(props) {
     props.answered(0)
   };
 
-  const onDoubleTap = () => {
+  const onPress = () => {
     props.reset()
   };
 
@@ -32,7 +32,7 @@ function Question(props) {
         <p className="fancy-text">What's your style?</p>
       </div>
 
-      <Hammer onDoubleTap={onDoubleTap}>
+      <Hammer onPress={onPress}>
         <div className="row question" style={divStyle}>
           <div className="left-side" onClick={clickNay}>
             <span>

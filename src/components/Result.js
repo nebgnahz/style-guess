@@ -1,16 +1,24 @@
 import React from 'react';
+import './Result.css';
+import Hammer from 'react-hammerjs';
 
 function Result(props) {
+  const onPress = () => {
+    props.reset()
+  };
+
   return (
     <div id="result">
+      <Hammer onPress={onPress}>
+        <div className="row">
+          <img src={props.image} role="presentation" width="100%"></img>
+        </div>
+      </Hammer>
       <div className="row">
-        <img src={props.image} role="presentation" width="100%"></img>
-      </div>
-      <div className="row">
-        <button>Plan your { props.result } style wedding</button>
-      </div>
-      <div className="row">
-        <button onClick={props.reset}>Redo the test</button>
+          <a className="view-detail"
+             href="https://weddingservice.ladymarry.com/schedule-appointment/">
+            Plan Your { props.result } Style Wedding
+          </a>
       </div>
     </div>
   );

@@ -8,6 +8,11 @@ a {
     cursor: pointer;
 }
 
+a:hover {
+    color: #f75c74;
+    cursor: pointer;
+}
+
 body {
     font-size: 1.4em;
     line-height: 1.3;

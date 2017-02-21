@@ -20,10 +20,15 @@ function Instruction(props) {
         <div className="block-over" onClick={handleStart}>
           <div className="text-frame">
             <p>How It Works</p>
-            <p>Click on the <i className="fa fa-heart" aria-hidden="true" />
-              &nbsp; if you ‘LIKE’ the image! </p>
-            <p>Click on the <i className="fa fa-ban" aria-hidden="true" />
-              &nbsp; if the image isn’t for you.</p>
+            <p>Click on the
+              &nbsp; <i className="fa fa-heart" aria-hidden="true" />
+              &nbsp; if you 'LIKE' the image!
+            </p>
+            <p>Click on the
+              &nbsp; <i className="fa fa-ban" aria-hidden="true" />
+              &nbsp; if the image isn't for you.
+            </p>
+            <p>Long press to reset the quiz</p>
             <a>START</a>
           </div>
         </div>

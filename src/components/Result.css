@@ -1,0 +1,21 @@
+.view-detail {
+    background-color: #e84a52;
+    color: #fff;
+    text-transform: none;
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif;
+    border-radius: 3px;
+    font-size: 14px;
+    line-height: 20px;
+    padding:15px 22px;
+    text-align: center;
+}
+
+a.view-detail:hover {
+    color: #fff;
+    text-transform: none;
+    text-decoration: none;
+    padding: 15px 30px;
+
+    transition: all 0.3s ease 0s;
+}
