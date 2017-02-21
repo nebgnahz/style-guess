@@ -14,10 +14,16 @@ function Result(props) {
           <img src={props.image} role="presentation" width="100%"></img>
         </div>
       </Hammer>
-      <div className="row">
+      <div className="row" id="view-detail-row">
           <a className="view-detail"
              href="https://weddingservice.ladymarry.com/schedule-appointment/">
             Plan Your { props.result } Style Wedding
+          </a>
+      </div>
+
+      <div className="row" id="start-over-div">
+          <a className="view-detail" id="start-over" onClick={onPress}>
+             Or Start Over
           </a>
       </div>
     </div>

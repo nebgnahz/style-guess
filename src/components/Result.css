@@ -7,8 +7,14 @@
     border-radius: 3px;
     font-size: 14px;
     line-height: 20px;
-    padding:15px 22px;
+    padding: 15px 20px;
     text-align: center;
+
+    transition: all 0.3s ease 0s;
+}
+
+#view-detail-row {
+    margin-top: 5px;
 }
 
 a.view-detail:hover {
@@ -18,4 +24,14 @@ a.view-detail:hover {
     padding: 15px 30px;
 
     transition: all 0.3s ease 0s;
+}
+
+#start-over {
+    background-color: #fff;
+    color: black;
+    border-color: #e84a52;
+}
+
+#start-over-div {
+    margin-top: 10px;
 }

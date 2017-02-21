@@ -11,10 +11,6 @@ function Question(props) {
     props.answered(0)
   };
 
-  const onPress = () => {
-    props.reset()
-  };
-
   var divStyle = {
     'backgroundImage': "url(" + props.image + ")",
     'backgroundRepeat': "no-repeat",
@@ -32,7 +28,7 @@ function Question(props) {
         <p className="fancy-text">What's your style?</p>
       </div>
 
-      <Hammer onPress={onPress}>
+      <Hammer>
         <div className="row question" style={divStyle}>
           <div className="left-side" onClick={clickNay}>
             <span>

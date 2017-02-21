@@ -28,7 +28,6 @@ function Instruction(props) {
               &nbsp; <i className="fa fa-ban" aria-hidden="true" />
               &nbsp; if the image isn't for you.
             </p>
-            <p>Long press to reset the quiz</p>
             <a>START</a>
           </div>
         </div>
