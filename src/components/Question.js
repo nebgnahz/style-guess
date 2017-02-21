@@ -11,8 +11,8 @@ function Question(props) {
     props.answered(0)
   };
 
-  const handleSwipe = (e) => {
-    console.log(e)
+  const onDoubleTap = () => {
+    props.reset()
   };
 
   var divStyle = {
@@ -31,22 +31,26 @@ function Question(props) {
       <div className="row">
         <p className="fancy-text">What's your style?</p>
       </div>
-      <div className="row question" style={divStyle}>
-        <div className="left-side" onClick={clickNay}>
-          <span>
-            <i className="fa fa-lg fa-ban" aria-hidden="true"></i>
-            <div className="space"/>
-            not for me
-          </span>
+
+      <Hammer onDoubleTap={onDoubleTap}>
+        <div className="row question" style={divStyle}>
+          <div className="left-side" onClick={clickNay}>
+            <span>
+              <i className="fa fa-lg fa-ban" aria-hidden="true"></i>
+              <div className="space"/>
+              not for me
+            </span>
+          </div>
+          <div className="right-side" onClick={clickLike}>
+            <span>
+              <i className="fa fa-lg fa-heart" aria-hidden="true"></i>
+              <div className="space"/>
+              like
+            </span>
+          </div>
         </div>
-        <div className="right-side" onClick={clickLike}>
-          <span>
-            <i className="fa fa-lg fa-heart" aria-hidden="true"></i>
-            <div className="space"/>
-            like
-          </span>
-        </div>
-      </div>
+      </Hammer>
+
       <div className="row">
         <div id="progressbar">
           <div id="progress" style={progressStyle}>
@@ -57,13 +61,6 @@ function Question(props) {
       </div>
       <div className="row">
         <span>{props.current + 1} / {props.total}</span>
-      </div>
-
-      <Hammer onSwipe={handleSwipe}>
-        <div>text</div>
-      </Hammer>
-      <div className="row">
-        <button onClick={props.reset}>reset the test</button>
       </div>
     </div>
   );
