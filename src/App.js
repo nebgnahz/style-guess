@@ -13,7 +13,7 @@ class App extends Component {
   constructor(props) {
     super(props);
 
-    var state = {
+    this.state = {
       // state machine
       landingPage: true,
       instructionPage: false,
@@ -29,12 +29,6 @@ class App extends Component {
       answerStat: '',
       preloadImages: [],
     }
-
-    var stored = localStorage.getItem('state');
-    if (stored !== null) {
-      state = JSON.parse(stored);
-    }
-    this.state = state;
   }
 
   getResult() {
@@ -53,26 +47,33 @@ class App extends Component {
       answerStat: Array.from({ length: Data.answers.length }, () => 0),
       preloadImages: questionImages.concat(answerImages),
     });
+
+
+    var stored = localStorage.getItem('state');
+    if (stored !== null) {
+      this.setState(JSON.parse(stored));
+    }
   }
 
   userClickedAnswer(i) {
     // We accumulate the state and move forward
     var id = this.state.questionId;
     var stat = this.state.answerStat;
-    if (id < (this.state.numQuestions - 1) && id >= 0) {
-      // Only when the user clicks `like` (1), we add the score.
-      if (i === 1) {
-        var answer = this.state.data.questions[id].answer;
-        for (let a of answer) {
-          stat[a] += 1;
-        }
-      }
 
-      this.setState({
-        questionId: id + 1,
-        answerStat: stat,
-      });
-    } else {
+    // Only when the user clicks `like` (1), we add the score.
+    if (i === 1) {
+      var answer = this.state.data.questions[id].answer;
+      for (let a of answer) {
+         stat[a] += 1;
+      }
+    }
+
+    this.setState({
+      questionId: id + 1,
+      answerStat: stat,
+    });
+
+    if (id >= (this.state.numQuestions - 1)) {
       // Finished so show result page?
       console.log(this.state.answerStat);
 
