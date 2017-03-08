@@ -16,6 +16,7 @@ function Result(props) {
       </Hammer>
       <div className="row" id="view-detail-row">
           <a className="view-detail"
+             target="_blank"
              href="https://weddingservice.ladymarry.com/schedule-appointment/">
             Plan Your { props.result } Style Wedding
           </a>
