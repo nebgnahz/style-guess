@@ -13,7 +13,11 @@ const answerImagePath = (name) => imagePath("result-" + name.toLowerCase() + ".j
 class App extends Component {
   constructor(props) {
     super(props);
+
+    // Prod GA User ID
     ReactGA.initialize('UA-55683977-12');
+    // Test GA User ID
+    //   ReactGA.initialize('UA-90114002-1');
 
     this.state = {
       // state machine
@@ -149,7 +153,7 @@ class App extends Component {
 
     ReactGA.event({
       category: 'style-quiz',
-      action: 'reset',
+      action: 'start over',
     });
 
     var answerCleared = this.state.answerStat.map((ans) => ans = 0);
@@ -164,6 +168,13 @@ class App extends Component {
     })
   }
 
+  toScheduleAppointment() {
+    ReactGA.event({
+      category: 'style-quiz',
+      action: 'schedule appointment',
+    });
+  }
+
   renderResult() {
     var answerText = this.getResult();
     var answerImage = answerImagePath(answerText);
@@ -176,6 +187,7 @@ class App extends Component {
     return (
       <Result result={answerText}
               image={answerImage}
+              next={this.toScheduleAppointment.bind(this)}
               reset={this.resetTest.bind(this)}
       />
     );
