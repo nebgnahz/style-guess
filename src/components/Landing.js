@@ -17,7 +17,7 @@ function Landing(props) {
         <p className="fancy-text">What's your style?</p>
       </div>
       <div className="row landing" style={divStyle}>
-        <div className="block-over" onClick={handleStart}>
+        <div className="block-over" onTouchStart={handleStart} onClick={handleStart}>
           <div className="text-frame">
             <a>START</a>
           </div>
