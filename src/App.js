@@ -182,6 +182,7 @@ class App extends Component {
     ReactGA.event({
       category: 'style-quiz',
       action: 'show result',
+      label: answerText
     });
 
     return (
