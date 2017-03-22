@@ -46,6 +46,8 @@ body {
     left: 0;
     z-index: 5;
     text-align: center;
+
+    cursor: pointer;
 }
 
 div.text-frame {
