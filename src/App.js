@@ -29,6 +29,8 @@ class App extends Component {
       // default values
       questionId: 0,
 
+      answer: "",
+
       // below will be filled once we load the data
       data: '',
       numQuestions: '',
@@ -154,6 +156,7 @@ class App extends Component {
     ReactGA.event({
       category: 'style-quiz',
       action: 'start over',
+      label: this.state.answer,
     });
 
     var answerCleared = this.state.answerStat.map((ans) => ans = 0);
@@ -172,12 +175,17 @@ class App extends Component {
     ReactGA.event({
       category: 'style-quiz',
       action: 'schedule appointment',
+      label: this.state.answer,
     });
   }
 
   renderResult() {
     var answerText = this.getResult();
     var answerImage = answerImagePath(answerText);
+
+    this.setState({
+      answer: answerText
+    });
 
     ReactGA.event({
       category: 'style-quiz',
