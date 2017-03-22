@@ -5,6 +5,7 @@ import Instruction from './components/Instruction';
 import Question from './components/Question';
 import Result from './components/Result';
 import Data from './api/Data';
+import ReactGA from 'react-ga';
 
 const imagePath = (name) => "./images/" + name;
 const answerImagePath = (name) => imagePath("result-" + name.toLowerCase() + ".jpg");
@@ -12,6 +13,7 @@ const answerImagePath = (name) => imagePath("result-" + name.toLowerCase() + ".j
 class App extends Component {
   constructor(props) {
     super(props);
+    ReactGA.initialize('UA-55683977-12');
 
     this.state = {
       // state machine
@@ -60,6 +62,13 @@ class App extends Component {
     var id = this.state.questionId;
     var stat = this.state.answerStat;
 
+    ReactGA.event({
+      category: 'style-quiz',
+      action: 'answer question',
+      label: 'question-' + id,
+      value: i,
+    });
+
     // Only when the user clicks `like` (1), we add the score.
     if (i === 1) {
       var answer = this.state.data.questions[id].answer;
@@ -87,6 +96,12 @@ class App extends Component {
   }
 
   showInstruction() {
+    ReactGA.event({
+      category: 'style-quiz',
+      action: 'start',
+      label: 'instruction'
+    });
+
     this.setState({
       landingPage: false,
       instructionPage: true,
@@ -94,6 +109,12 @@ class App extends Component {
   }
 
   showQuestion() {
+    ReactGA.event({
+      category: 'style-quiz',
+      action: 'start',
+      label: 'question'
+    });
+
     this.setState({
       instructionPage: false,
       questionPage: true,
@@ -101,6 +122,12 @@ class App extends Component {
   }
 
   renderLanding() {
+    ReactGA.event({
+      category: 'style-quiz',
+      action: 'start',
+      label: 'landing'
+    });
+
     var question = this.state.data.questions[0];
 
     return (
@@ -119,7 +146,14 @@ class App extends Component {
 
   resetTest() {
     localStorage.clear();
+
+    ReactGA.event({
+      category: 'style-quiz',
+      action: 'reset',
+    });
+
     var answerCleared = this.state.answerStat.map((ans) => ans = 0);
+
     this.setState({
       landingPage: true,
       instructionPage: false,
@@ -133,6 +167,12 @@ class App extends Component {
   renderResult() {
     var answerText = this.getResult();
     var answerImage = answerImagePath(answerText);
+
+    ReactGA.event({
+      category: 'style-quiz',
+      action: 'show result',
+    });
+
     return (
       <Result result={answerText}
               image={answerImage}
