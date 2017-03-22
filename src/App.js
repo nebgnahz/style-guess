@@ -7,7 +7,7 @@ import Result from './components/Result';
 import Data from './api/Data';
 
 const imagePath = (name) => "./images/" + name;
-const answerImagePath = (name) => imagePath("result-" + name.toLowerCase() + ".png");
+const answerImagePath = (name) => imagePath("result-" + name.toLowerCase() + ".jpg");
 
 class App extends Component {
   constructor(props) {
