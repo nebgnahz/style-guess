@@ -1,97 +1,132 @@
 const Data = {
     answers: [
-        "Chic",
+        "Glamorous",
+        "Natural",
+        "Romantic",
         "Rustic",
-        "Classic",
-        "Fairytale",
-        "Glamous",
-        "Garden"
+        "Vintage"
     ],
 
     questions: [
         {
-            image: "chic+rustic.jpg",
-            answer: [0, 1]
+            image: "glamorous3.jpg",
+            answer: [
+                0
+            ]
         },
         {
-            image: "chic1.jpg",
-            answer: [0]
+            image: "natural4.jpg",
+            answer: [
+                1
+            ]
         },
         {
-            image: "classic+chic.jpg",
-            answer: [0, 2]
+            image: "natural3.jpg",
+            answer: [
+                1
+            ]
         },
         {
-            image: "classic.jpg",
-            answer: [2]
+            image: "romantic1.jpg",
+            answer: [
+                2
+            ]
         },
         {
-            image: "classic2.jpg",
-            answer: [2]
-        },
-        {
-            image: "fairytale+glamous2.jpg",
-            answer: [3, 4]
-        },
-        {
-            image: "fairytale1.jpg",
-            answer: [3]
-        },
-        {
-            image: "fairytale2.jpg",
-            answer: [3]
-        },
-        {
-            image: "garden+chic.jpg",
-            answer: [0, 5]
-        },
-        {
-            image: "garden+fairytale.jpg",
-            answer: [3, 5]
-        },
-        {
-            image: "garden+rustic.jpg",
-            answer: [1, 5]
-        },
-        {
-            image: "garden.jpg",
-            answer: [5]
-        },
-        {
-            image: "garden2.jpg",
-            answer: [5]
-        },
-        {
-            image: "glamous+fairytale.jpg",
-            answer: [4, 3]
-        },
-        {
-            image: "glamous1.jpg",
-            answer: [4]
-        },
-        {
-            image: "glamous2.jpg",
-            answer: [4]
-        },
-        {
-            image: "glamous3.jpg",
-            answer: [4]
-        },
-        {
-            image: "rustic+classic.jpg",
-            answer: [1, 3]
-        },
-        {
-            image: "rustic.jpg",
-            answer: [1]
-        },
-        {
-            image: "rustic2.jpg",
-            answer: [1]
+            image: "natural2.jpg",
+            answer: [
+                1
+            ]
         },
         {
             image: "rustic3.jpg",
-            answer: [1]
+            answer: [
+                3
+            ]
+        },
+        {
+            image: "romantic2.jpg",
+            answer: [
+                2
+            ]
+        },
+        {
+            image: "vintage1.jpg",
+            answer: [
+                4
+            ]
+        },
+        {
+            image: "vintage4.jpg",
+            answer: [
+                4
+            ]
+        },
+        {
+            image: "glamorous2.jpg",
+            answer: [
+                0
+            ]
+        },
+        {
+            image: "natural1.jpg",
+            answer: [
+                1
+            ]
+        },
+        {
+            image: "glamorous4.jpg",
+            answer: [
+                0
+            ]
+        },
+        {
+            image: "vintage3.jpg",
+            answer: [
+                4
+            ]
+        },
+        {
+            image: "glamorous1.jpg",
+            answer: [
+                0
+            ]
+        },
+        {
+            image: "romantic3.jpg",
+            answer: [
+                2
+            ]
+        },
+        {
+            image: "vintage2.jpg",
+            answer: [
+                4
+            ]
+        },
+        {
+            image: "rustic1.jpg",
+            answer: [
+                3
+            ]
+        },
+        {
+            image: "romantic4.jpg",
+            answer: [
+                2
+            ]
+        },
+        {
+            image: "rustic4.jpg",
+            answer: [
+                3
+            ]
+        },
+        {
+            image: "rustic2.jpg",
+            answer: [
+                3
+            ]
         }
     ]
 };
