@@ -9,7 +9,7 @@ const Data = {
 
     questions: [
         {
-            image: "glamorous3.jpg",
+            image: "glamorous4.jpg",
             answer: [
                 0
             ]
@@ -75,7 +75,7 @@ const Data = {
             ]
         },
         {
-            image: "glamorous4.jpg",
+            image: "glamorous3.jpg",
             answer: [
                 0
             ]
