@@ -2,6 +2,8 @@ import React from 'react';
 import './Question.css';
 import Hammer from 'react-hammerjs';
 
+const title = "What's my wedding style?";
+
 function Question(props) {
   const clickLike = (e) => {
     props.answered(1)
@@ -25,7 +27,7 @@ function Question(props) {
   return (
     <div>
       <div className="row">
-        <p className="fancy-text">What's your style?</p>
+        <p className="fancy-text">{title}</p>
       </div>
 
       <Hammer>
