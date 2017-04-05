@@ -1,5 +1,7 @@
 import React from 'react';
 
+const title = "What's my wedding style?";
+
 function Instruction(props) {
   const handleStart = (e) => {
     props.clicked()
@@ -14,7 +16,7 @@ function Instruction(props) {
   return (
     <div>
       <div className="row">
-        <p className="fancy-text">What's your style?</p>
+        <p className="fancy-text">{title}</p>
       </div>
       <div className="row landing" style={divStyle}>
         <div className="block-over" onClick={handleStart}>
